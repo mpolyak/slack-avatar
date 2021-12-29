@@ -4,6 +4,6 @@
 set -e
 
 while true; do
-	node src/index.mjs
+	node .
 	sleep 15
 done
