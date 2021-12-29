@@ -18,4 +18,4 @@ Observe avatar state transitions by running `npm start dev` (python3 is required
 - Run `npm run start:local` to continuously update the avatar every 15 seconds.
 
 ## License
-MIT
+[MIT](LICENSE)
