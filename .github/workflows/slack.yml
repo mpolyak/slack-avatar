@@ -1,5 +1,7 @@
 name: slack-avatar
+
 on: [push]
+
 jobs:
   update-avatar:
     runs-on: ubuntu-latest
@@ -8,18 +10,17 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '16'
-      - name: Download state file
-        uses: actions/download-artifact@v2
-        with:
-          name: state-file
-          path: state.txt
+
       - name: Update avatar on Slack
         run: npm start
         env:
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
           STATE_FILE: state.txt
-      - name: Upload state file
-        uses: actions/upload-artifact@v2
-        with:
-          name: state-file
-          path: state.txt
+
+      - name: Commit avatar state
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add state.txt
+          git commit -m "Next avatar state"
+          git push origin master
