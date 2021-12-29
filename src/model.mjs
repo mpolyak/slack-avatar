@@ -42,7 +42,7 @@ export class State {
         this.fs = fs;
         this.file = file;
 
-        if (file ?? fs?.existsSync(file)) {
+        if (file && fs?.existsSync(file)) {
             console.log("Loading state from:", file);
 
             this.state = parseInt(fs?.readFileSync(file));
