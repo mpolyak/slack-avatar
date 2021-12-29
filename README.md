@@ -8,13 +8,13 @@ Observe avatar state transitions by running `npm start dev` (python3 is required
 
 ## Setup
 1. Set `SLACK_TOKEN` environment variable to the **User OAuth Token** generated for your workspace installed app (Under *OAuth & Permissions* section in your app configuration page, [https://api.slack.com/apps](https://api.slack.com/apps)).
-    - Ensure `users.profile:write` scope is added to **User Token Scopes** to allow for editing your profile photo. 
+    - Ensure `users.profile:write` scope is added to **User Token Scopes** to allow for editing of your profile photo. 
 
 
 2. Set `STATE_FILE` to the filename where the current avatar state will be stored between runs.
 
 ## Running
-- Run `npm start` or `node .` to update the avatar once.
+- Run `npm start` to update the avatar once.
 - Run `npm run start:local` to continuously update the avatar every 15 seconds.
 
 ## License
