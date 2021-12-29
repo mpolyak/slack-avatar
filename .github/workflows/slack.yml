@@ -12,6 +12,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: state-file
+          path: state.txt
       - name: Update avatar on Slack
         run: npm start
         env:
