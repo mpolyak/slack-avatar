@@ -1,0 +1,20 @@
+{
+  "name": "slack-avatar",
+  "version": "0.1.0",
+  "description": "My animated Slack avatar",
+  "private": true,
+  "type": "module",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "dev": "python3 -m http.server",
+    "gif": "./scripts/gif.sh",
+    "start": "node .",
+    "start:local": "./scripts/start.sh",
+    "test": "./scripts/test.sh"
+  },
+  "author": "Michael Polyak",
+  "license": "MIT"
+}

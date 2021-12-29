@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="logo.png"/>
+    <script type="module" src="src/model.mjs"></script>
+    <script type="module">
+        import {State} from "./src/model.mjs";
+
+        const state = new State();
+
+        window.onload = function() {
+            const avatar = document.getElementById("avatar");
+
+            const update = () => {
+                state.next();
+
+                console.log(state.getName());
+                
+                avatar.src = state.getImage();
+            };
+
+            update();
+            
+            setInterval(update, 2000); 
+        }
+    </script>
+</head>
+<body>
+    <img id="avatar">
+</body>
+</html>
