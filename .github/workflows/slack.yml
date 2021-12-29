@@ -22,8 +22,10 @@ jobs:
 
       - name: Commit avatar state
         run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add state.txt
-          git commit -m "Next avatar state"
-          git push origin master
+          if [[ `git status --porcelain` ]]; then
+            git config user.name github-actions
+            git config user.email github-actions@github.com
+            git add state.txt
+            git commit -m "New avatar state"
+            git push -f origin state
+          fi
